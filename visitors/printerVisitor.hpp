@@ -30,17 +30,17 @@ class ExpressionPrinter : public ExpressionVisitor {
         return os.str();
     }
 
-    void visitAdd(AddExpression& addExpr) override {
+    void visit(AddExpression& addExpr) override {
         os << "(";
         visitBinaryExpression(addExpr, " + ");
         os << ")";
     }
-    void visitMultiply(MultiplyExpression& mulExpr) override {
+    void visit(MultiplyExpression& mulExpr) override {
         os << "(";
         visitBinaryExpression(mulExpr, " * ");
         os << ")";
     }
-    void visitNumber(NumberExpression& numExpr) override {
+    void visit(NumberExpression& numExpr) override {
         os << numExpr.getNumber();
     }
 };

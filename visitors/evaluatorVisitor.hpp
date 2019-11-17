@@ -19,27 +19,25 @@ class EvaluatorVisitor : public ExpressionVisitor {
         return retVal;
     }
 
-    void visitAdd(AddExpression& expr) override {
-        retVal = 0;
+    void visit(AddExpression& expr) override {
+
         expr.left().accept(*this);
         double left = retVal;
-        retVal = 0;
+
         expr.right().accept(*this);
         double right = retVal;
         retVal = left + right;
     }
-    void visitMultiply(MultiplyExpression& expr) override {
-        retVal = 0;
+    void visit(MultiplyExpression& expr) override {
+
         expr.left().accept(*this);
         double left = retVal;
-        retVal = 0;
+
         expr.right().accept(*this);
         double right = retVal;
         retVal = left * right;
     }
-    void visitNumber(NumberExpression& expr) override {
-        retVal = expr.getNumber();
-    }
+    void visit(NumberExpression& expr) override { retVal = expr.getNumber(); }
 };
 
 #endif // INC_30F_VARIANTS_PRINTERVISITOR_HPP

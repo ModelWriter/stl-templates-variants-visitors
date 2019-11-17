@@ -40,7 +40,8 @@ class AddExpression : public BinaryExpression {
     using BinaryExpression::BinaryExpression;
 
     void accept(ExpressionVisitor& visitor) override {
-        visitor.visitAdd(*this);
+        // visitor.visitAdd(*this);
+        visitor.visit(*this);
     }
 };
 
@@ -49,7 +50,8 @@ class MultiplyExpression : public BinaryExpression {
     using BinaryExpression::BinaryExpression;
 
     void accept(ExpressionVisitor& visitor) override {
-        visitor.visitMultiply(*this);
+        // visitor.visitMultiply(*this);
+        visitor.visit(*this);
     }
 };
 
@@ -62,7 +64,8 @@ class NumberExpression : public Expression {
     [[nodiscard]] double getNumber() const { return number; }
 
     void accept(ExpressionVisitor& visitor) override {
-        visitor.visitNumber(*this);
+        // visitor.visitNumber(*this);
+        visitor.visit(*this);
     }
 };
 
