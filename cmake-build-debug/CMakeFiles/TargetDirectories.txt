@@ -1,0 +1,8 @@
+/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/visitor_pattern.dir
+/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/var_overload_2.dir
+/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/HowTo.dir
+/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/var_overload_1.dir
+/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/var.dir
+/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/var_overload_3.dir
