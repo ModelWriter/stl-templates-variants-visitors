@@ -38,7 +38,7 @@ void fbanner(ostream& fout) {
 // ---------------------------------------------------------------------------
 //  Print termination message.
 
-void bye() {
+void fbye() {
     cout << "\n---------------------------------------------------------------"
             "\nNormal termination.\n\n";
 }

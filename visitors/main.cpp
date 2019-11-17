@@ -9,8 +9,10 @@
 #include "printerVisitor.hpp"
 #include <iostream>
 #include <memory>
+#include <tools.hpp>
 
 int main() {
+    banner();
     {
         auto expression = // ((3 + (4 * 6)) + 2) = 29
             std::make_unique<AddExpression>(
@@ -68,6 +70,6 @@ int main() {
         std::cout << printer.print(*expression) << " = "
                   << evaluator.evaluate(*expression);
     }
-
+    bye();
     return 0;
 }

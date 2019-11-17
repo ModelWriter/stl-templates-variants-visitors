@@ -341,6 +341,12 @@
 		<Unit filename="/home/ferhat/git/variants-visitors/HowTo.cpp">
 			<Option target="HowTo"/>
 		</Unit>
+		<Unit filename="/home/ferhat/git/variants-visitors/tools.cpp">
+			<Option target="visitor_pattern"/>
+		</Unit>
+		<Unit filename="/home/ferhat/git/variants-visitors/tools.hpp">
+			<Option target="visitor_pattern"/>
+		</Unit>
 		<Unit filename="/home/ferhat/git/variants-visitors/variants/Variants.cpp">
 			<Option target="var"/>
 		</Unit>

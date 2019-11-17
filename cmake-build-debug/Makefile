@@ -215,6 +215,33 @@ HowTo.cpp.s:
 	$(MAKE) -f CMakeFiles/HowTo.dir/build.make CMakeFiles/HowTo.dir/HowTo.cpp.s
 .PHONY : HowTo.cpp.s
 
+tools.o: tools.cpp.o
+
+.PHONY : tools.o
+
+# target to build an object file
+tools.cpp.o:
+	$(MAKE) -f CMakeFiles/visitor_pattern.dir/build.make CMakeFiles/visitor_pattern.dir/tools.cpp.o
+.PHONY : tools.cpp.o
+
+tools.i: tools.cpp.i
+
+.PHONY : tools.i
+
+# target to preprocess a source file
+tools.cpp.i:
+	$(MAKE) -f CMakeFiles/visitor_pattern.dir/build.make CMakeFiles/visitor_pattern.dir/tools.cpp.i
+.PHONY : tools.cpp.i
+
+tools.s: tools.cpp.s
+
+.PHONY : tools.s
+
+# target to generate assembly for a file
+tools.cpp.s:
+	$(MAKE) -f CMakeFiles/visitor_pattern.dir/build.make CMakeFiles/visitor_pattern.dir/tools.cpp.s
+.PHONY : tools.cpp.s
+
 variants/Variants.o: variants/Variants.cpp.o
 
 .PHONY : variants/Variants.o
@@ -394,6 +421,9 @@ help:
 	@echo "... HowTo.o"
 	@echo "... HowTo.i"
 	@echo "... HowTo.s"
+	@echo "... tools.o"
+	@echo "... tools.i"
+	@echo "... tools.s"
 	@echo "... variants/Variants.o"
 	@echo "... variants/Variants.i"
 	@echo "... variants/Variants.s"

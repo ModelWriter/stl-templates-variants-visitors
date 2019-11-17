@@ -13,6 +13,8 @@ add_executable(HowTo
         HowTo.cpp)
 
 add_executable(visitor_pattern
+        tools.hpp
+        tools.cpp
         visitors/ast.cpp
         visitors/ast.hpp
         visitors/main.cpp
