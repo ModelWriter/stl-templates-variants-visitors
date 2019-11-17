@@ -15,14 +15,14 @@
 class Expression {
   public:
     virtual ~Expression() = default;
-    virtual void accept(ExpressionVisitor&){};
+    virtual void accept(ExpressionVisitor&) const {};
 };
 
 using ExpressionPtr = std::unique_ptr<Expression>;
 
 class BinaryExpression : public Expression {
-    std::unique_ptr<Expression> lhs;
-    std::unique_ptr<Expression> rhs;
+    const std::unique_ptr<Expression> lhs;
+    const std::unique_ptr<Expression> rhs;
 
   public:
     BinaryExpression(std::unique_ptr<Expression> left,
@@ -39,7 +39,7 @@ class AddExpression : public BinaryExpression {
   public:
     using BinaryExpression::BinaryExpression;
 
-    void accept(ExpressionVisitor& visitor) override {
+    void accept(ExpressionVisitor& visitor) const override {
         // visitor.visitAdd(*this);
         visitor.visit(*this);
     }
@@ -49,21 +49,21 @@ class MultiplyExpression : public BinaryExpression {
   public:
     using BinaryExpression::BinaryExpression;
 
-    void accept(ExpressionVisitor& visitor) override {
+    void accept(ExpressionVisitor& visitor) const override {
         // visitor.visitMultiply(*this);
         visitor.visit(*this);
     }
 };
 
 class NumberExpression : public Expression {
-    double number;
+    const double number;
 
   public:
     explicit NumberExpression(double d) : number(d) {}
 
     [[nodiscard]] double getNumber() const { return number; }
 
-    void accept(ExpressionVisitor& visitor) override {
+    void accept(ExpressionVisitor& visitor) const override {
         // visitor.visitNumber(*this);
         visitor.visit(*this);
     }

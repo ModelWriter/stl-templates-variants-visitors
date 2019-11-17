@@ -15,8 +15,8 @@ class ExpressionPrinter : public ExpressionVisitor {
   private:
     std::stringstream os;
 
-    void visitBinaryExpression(BinaryExpression& binExpr,
-                               std::string const& infix) {
+    void visitBinaryExpression(const BinaryExpression& binExpr,
+                               const std::string& infix) {
         binExpr.left().accept(*this);
         os << infix;
         binExpr.right().accept(*this);
@@ -30,17 +30,17 @@ class ExpressionPrinter : public ExpressionVisitor {
         return os.str();
     }
 
-    void visit(AddExpression& addExpr) override {
+    void visit(const AddExpression& addExpr) override {
         os << "(";
         visitBinaryExpression(addExpr, " + ");
         os << ")";
     }
-    void visit(MultiplyExpression& mulExpr) override {
+    void visit(const MultiplyExpression& mulExpr) override {
         os << "(";
         visitBinaryExpression(mulExpr, " * ");
         os << ")";
     }
-    void visit(NumberExpression& numExpr) override {
+    void visit(const NumberExpression& numExpr) override {
         os << numExpr.getNumber();
     }
 };

@@ -14,11 +14,11 @@ class NumberExpression;
 class ExpressionVisitor {
   public:
     // virtual void visitAdd(AddExpression&) = 0;
-    virtual void visit(AddExpression&) = 0;
+    virtual void visit(const AddExpression&) = 0;
     // virtual void visitMultiply(MultiplyExpression&) = 0;
-    virtual void visit(MultiplyExpression&) = 0;
+    virtual void visit(const MultiplyExpression&) = 0;
     // virtual void visitNumber(NumberExpression&) = 0;
-    virtual void visit(NumberExpression&) = 0;
+    virtual void visit(const NumberExpression&) = 0;
 
     virtual ~ExpressionVisitor() = default;
 };
