@@ -57,7 +57,7 @@ all: CMakeFiles/visitor_pattern.dir/all
 all: CMakeFiles/var_overload_2.dir/all
 all: CMakeFiles/HowTo.dir/all
 all: CMakeFiles/var_overload_1.dir/all
-all: CMakeFiles/var.dir/all
+all: CMakeFiles/var_vanilla.dir/all
 all: CMakeFiles/var_overload_3.dir/all
 
 .PHONY : all
@@ -67,7 +67,7 @@ clean: CMakeFiles/visitor_pattern.dir/clean
 clean: CMakeFiles/var_overload_2.dir/clean
 clean: CMakeFiles/HowTo.dir/clean
 clean: CMakeFiles/var_overload_1.dir/clean
-clean: CMakeFiles/var.dir/clean
+clean: CMakeFiles/var_vanilla.dir/clean
 clean: CMakeFiles/var_overload_3.dir/clean
 
 .PHONY : clean
@@ -111,7 +111,7 @@ CMakeFiles/visitor_pattern.dir/clean:
 CMakeFiles/var_overload_2.dir/all:
 	$(MAKE) -f CMakeFiles/var_overload_2.dir/build.make CMakeFiles/var_overload_2.dir/depend
 	$(MAKE) -f CMakeFiles/var_overload_2.dir/build.make CMakeFiles/var_overload_2.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target var_overload_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target var_overload_2"
 .PHONY : CMakeFiles/var_overload_2.dir/all
 
 # Build rule for subdir invocation for target.
@@ -165,7 +165,7 @@ CMakeFiles/HowTo.dir/clean:
 CMakeFiles/var_overload_1.dir/all:
 	$(MAKE) -f CMakeFiles/var_overload_1.dir/build.make CMakeFiles/var_overload_1.dir/depend
 	$(MAKE) -f CMakeFiles/var_overload_1.dir/build.make CMakeFiles/var_overload_1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles --progress-num=5,6 "Built target var_overload_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target var_overload_1"
 .PHONY : CMakeFiles/var_overload_1.dir/all
 
 # Build rule for subdir invocation for target.
@@ -186,31 +186,31 @@ CMakeFiles/var_overload_1.dir/clean:
 .PHONY : CMakeFiles/var_overload_1.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/var.dir
+# Target rules for target CMakeFiles/var_vanilla.dir
 
 # All Build rule for target.
-CMakeFiles/var.dir/all:
-	$(MAKE) -f CMakeFiles/var.dir/build.make CMakeFiles/var.dir/depend
-	$(MAKE) -f CMakeFiles/var.dir/build.make CMakeFiles/var.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles --progress-num=3,4 "Built target var"
-.PHONY : CMakeFiles/var.dir/all
+CMakeFiles/var_vanilla.dir/all:
+	$(MAKE) -f CMakeFiles/var_vanilla.dir/build.make CMakeFiles/var_vanilla.dir/depend
+	$(MAKE) -f CMakeFiles/var_vanilla.dir/build.make CMakeFiles/var_vanilla.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target var_vanilla"
+.PHONY : CMakeFiles/var_vanilla.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/var.dir/rule: cmake_check_build_system
+CMakeFiles/var_vanilla.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/var.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/var_vanilla.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/var.dir/rule
+.PHONY : CMakeFiles/var_vanilla.dir/rule
 
 # Convenience name for target.
-var: CMakeFiles/var.dir/rule
+var_vanilla: CMakeFiles/var_vanilla.dir/rule
 
-.PHONY : var
+.PHONY : var_vanilla
 
 # clean rule for target.
-CMakeFiles/var.dir/clean:
-	$(MAKE) -f CMakeFiles/var.dir/build.make CMakeFiles/var.dir/clean
-.PHONY : CMakeFiles/var.dir/clean
+CMakeFiles/var_vanilla.dir/clean:
+	$(MAKE) -f CMakeFiles/var_vanilla.dir/build.make CMakeFiles/var_vanilla.dir/clean
+.PHONY : CMakeFiles/var_vanilla.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/var_overload_3.dir
@@ -219,7 +219,7 @@ CMakeFiles/var.dir/clean:
 CMakeFiles/var_overload_3.dir/all:
 	$(MAKE) -f CMakeFiles/var_overload_3.dir/build.make CMakeFiles/var_overload_3.dir/depend
 	$(MAKE) -f CMakeFiles/var_overload_3.dir/build.make CMakeFiles/var_overload_3.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles --progress-num=9,10 "Built target var_overload_3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles --progress-num=7,8 "Built target var_overload_3"
 .PHONY : CMakeFiles/var_overload_3.dir/all
 
 # Build rule for subdir invocation for target.

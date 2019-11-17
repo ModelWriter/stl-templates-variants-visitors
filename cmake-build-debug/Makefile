@@ -163,17 +163,17 @@ var_overload_1/fast:
 .PHONY : var_overload_1/fast
 
 #=============================================================================
-# Target rules for targets named var
+# Target rules for targets named var_vanilla
 
 # Build rule for target.
-var: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 var
-.PHONY : var
+var_vanilla: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 var_vanilla
+.PHONY : var_vanilla
 
 # fast build rule for target.
-var/fast:
-	$(MAKE) -f CMakeFiles/var.dir/build.make CMakeFiles/var.dir/build
-.PHONY : var/fast
+var_vanilla/fast:
+	$(MAKE) -f CMakeFiles/var_vanilla.dir/build.make CMakeFiles/var_vanilla.dir/build
+.PHONY : var_vanilla/fast
 
 #=============================================================================
 # Target rules for targets named var_overload_3
@@ -248,7 +248,7 @@ variants/Variants.o: variants/Variants.cpp.o
 
 # target to build an object file
 variants/Variants.cpp.o:
-	$(MAKE) -f CMakeFiles/var.dir/build.make CMakeFiles/var.dir/variants/Variants.cpp.o
+	$(MAKE) -f CMakeFiles/var_vanilla.dir/build.make CMakeFiles/var_vanilla.dir/variants/Variants.cpp.o
 .PHONY : variants/Variants.cpp.o
 
 variants/Variants.i: variants/Variants.cpp.i
@@ -257,7 +257,7 @@ variants/Variants.i: variants/Variants.cpp.i
 
 # target to preprocess a source file
 variants/Variants.cpp.i:
-	$(MAKE) -f CMakeFiles/var.dir/build.make CMakeFiles/var.dir/variants/Variants.cpp.i
+	$(MAKE) -f CMakeFiles/var_vanilla.dir/build.make CMakeFiles/var_vanilla.dir/variants/Variants.cpp.i
 .PHONY : variants/Variants.cpp.i
 
 variants/Variants.s: variants/Variants.cpp.s
@@ -266,7 +266,7 @@ variants/Variants.s: variants/Variants.cpp.s
 
 # target to generate assembly for a file
 variants/Variants.cpp.s:
-	$(MAKE) -f CMakeFiles/var.dir/build.make CMakeFiles/var.dir/variants/Variants.cpp.s
+	$(MAKE) -f CMakeFiles/var_vanilla.dir/build.make CMakeFiles/var_vanilla.dir/variants/Variants.cpp.s
 .PHONY : variants/Variants.cpp.s
 
 variants/Variants1.o: variants/Variants1.cpp.o
@@ -416,7 +416,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... HowTo"
 	@echo "... var_overload_1"
-	@echo "... var"
+	@echo "... var_vanilla"
 	@echo "... var_overload_3"
 	@echo "... HowTo.o"
 	@echo "... HowTo.i"

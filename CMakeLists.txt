@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(30f_Variants)
+project(variants-visitors)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -22,7 +22,7 @@ add_executable(visitor_pattern
         visitors/printerVisitor.hpp
         visitors/evaluatorVisitor.hpp)
 
-add_executable(var
+add_executable(var_vanilla
         variants/Variants.cpp)
 
 add_executable(var_overload_1

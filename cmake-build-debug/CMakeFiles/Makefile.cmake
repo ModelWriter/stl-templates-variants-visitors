@@ -52,6 +52,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/var_overload_2.dir/DependInfo.cmake"
   "CMakeFiles/HowTo.dir/DependInfo.cmake"
   "CMakeFiles/var_overload_1.dir/DependInfo.cmake"
-  "CMakeFiles/var.dir/DependInfo.cmake"
+  "CMakeFiles/var_vanilla.dir/DependInfo.cmake"
   "CMakeFiles/var_overload_3.dir/DependInfo.cmake"
   )
