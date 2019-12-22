@@ -22,7 +22,7 @@
     a
 
 // Macro to print destructors
-#define d(a)                                                                   \
+#define divider(a)                                                                   \
     std::cout << "\n Deleting " << #a << " " << this << std::dec << "...";
 
 #else

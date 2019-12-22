@@ -3,7 +3,7 @@ project(variants-visitors-stl)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(. variants templates)
+include_directories(. variants templates stl)
 
 
 add_compile_options(-O1 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-virtual-dtor)
@@ -14,6 +14,55 @@ add_executable(constructor_destructor
 
 add_executable(templates
         templates/templates.cpp)
+
+add_executable(stl_for_each
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_for_each.cpp)
+
+add_executable(stl_transform
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_transform.cpp)
+
+add_executable(stl_find
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_find.cpp)
+
+add_executable(stl_count
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_count.cpp)
+
+add_executable(stl_find_first_of
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_find_first_of.cpp)
+
+add_executable(stl_all_any_none_of
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_all_any_none_of.cpp)
+
+add_executable(stl_copy
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_copy.cpp)
 
 add_executable(visitor_pattern
         utility.hpp

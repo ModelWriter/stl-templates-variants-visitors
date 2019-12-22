@@ -9,7 +9,7 @@ out
 gen
 ### C++ template
 # Prerequisites
-*.d
+*.divider
 
 # Compiled Object files
 *.slo
@@ -43,7 +43,7 @@ gen
 
 ### C template
 # Prerequisites
-*.d
+*.divider
 
 # Object files
 *.o

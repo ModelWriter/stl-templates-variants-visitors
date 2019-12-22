@@ -4,8 +4,8 @@
 //  Copyright (c) 2019 Yale University. All rights reserved.
 // -----------------------------------------------------------------------------
 
-#ifndef INC_30F_VARIANTS_AST_HPP
-#define INC_30F_VARIANTS_AST_HPP
+#ifndef AST_HPP
+#define AST_HPP
 
 #include "visitor.hpp"
 #include <cassert>
@@ -69,4 +69,4 @@ class NumberExpression : public Expression {
     }
 };
 
-#endif // INC_30F_VARIANTS_AST_HPP
+#endif // AST_HPP

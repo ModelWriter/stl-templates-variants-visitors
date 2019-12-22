@@ -4,8 +4,8 @@
 //  Copyright (c) 2019 Yale University. All rights reserved.
 // -----------------------------------------------------------------------------
 
-#ifndef INC_30F_VARIANTS_VISITOR_HPP
-#define INC_30F_VARIANTS_VISITOR_HPP
+#ifndef VISITOR_HPP
+#define VISITOR_HPP
 
 class AddExpression;
 class MultiplyExpression;
@@ -23,4 +23,4 @@ class ExpressionVisitor {
     virtual ~ExpressionVisitor() = default;
 };
 
-#endif // INC_30F_VARIANTS_VISITOR_HPP
+#endif // VISITOR_HPP
