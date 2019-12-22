@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/var_overload_3.dir/variants/Variants3.cpp.o  -o var_overload_3 
