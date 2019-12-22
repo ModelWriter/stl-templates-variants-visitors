@@ -6,34 +6,22 @@
 
 #IncludeRegexTransform: 
 
-../tools.hpp
-fstream
+../utility.hpp
+string
+-
+
+/home/ferhat/git/variants-visitors/utility.cpp
+utility.hpp
+/home/ferhat/git/variants-visitors/utility.hpp
+ctime
 -
 iomanip
 -
 iostream
 -
-limits
--
-sstream
--
-cctype
--
-cerrno
--
-cmath
--
-cstdarg
--
-cstdio
--
-cstdlib
--
-cstring
--
-ctime
--
-unistd.h
+
+/home/ferhat/git/variants-visitors/utility.hpp
+string
 -
 
 /home/ferhat/git/variants-visitors/visitors/ast.hpp
@@ -59,11 +47,11 @@ evaluatorVisitor.hpp
 /home/ferhat/git/variants-visitors/visitors/evaluatorVisitor.hpp
 printerVisitor.hpp
 /home/ferhat/git/variants-visitors/visitors/printerVisitor.hpp
+utility.hpp
+/home/ferhat/git/variants-visitors/visitors/utility.hpp
 iostream
 -
 memory
--
-tools.hpp
 -
 
 /home/ferhat/git/variants-visitors/visitors/printerVisitor.hpp

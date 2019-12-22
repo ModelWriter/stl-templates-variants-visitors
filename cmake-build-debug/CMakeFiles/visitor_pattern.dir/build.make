@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/92/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/99/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/92/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/99/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -57,18 +57,18 @@ include CMakeFiles/visitor_pattern.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/visitor_pattern.dir/flags.make
 
-CMakeFiles/visitor_pattern.dir/tools.cpp.o: CMakeFiles/visitor_pattern.dir/flags.make
-CMakeFiles/visitor_pattern.dir/tools.cpp.o: ../tools.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/visitor_pattern.dir/tools.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/visitor_pattern.dir/tools.cpp.o -c /home/ferhat/git/variants-visitors/tools.cpp
+CMakeFiles/visitor_pattern.dir/utility.cpp.o: CMakeFiles/visitor_pattern.dir/flags.make
+CMakeFiles/visitor_pattern.dir/utility.cpp.o: ../utility.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/visitor_pattern.dir/utility.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/visitor_pattern.dir/utility.cpp.o -c /home/ferhat/git/variants-visitors/utility.cpp
 
-CMakeFiles/visitor_pattern.dir/tools.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/visitor_pattern.dir/tools.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ferhat/git/variants-visitors/tools.cpp > CMakeFiles/visitor_pattern.dir/tools.cpp.i
+CMakeFiles/visitor_pattern.dir/utility.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/visitor_pattern.dir/utility.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ferhat/git/variants-visitors/utility.cpp > CMakeFiles/visitor_pattern.dir/utility.cpp.i
 
-CMakeFiles/visitor_pattern.dir/tools.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/visitor_pattern.dir/tools.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ferhat/git/variants-visitors/tools.cpp -o CMakeFiles/visitor_pattern.dir/tools.cpp.s
+CMakeFiles/visitor_pattern.dir/utility.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/visitor_pattern.dir/utility.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ferhat/git/variants-visitors/utility.cpp -o CMakeFiles/visitor_pattern.dir/utility.cpp.s
 
 CMakeFiles/visitor_pattern.dir/visitors/ast.cpp.o: CMakeFiles/visitor_pattern.dir/flags.make
 CMakeFiles/visitor_pattern.dir/visitors/ast.cpp.o: ../visitors/ast.cpp
@@ -98,14 +98,14 @@ CMakeFiles/visitor_pattern.dir/visitors/main.cpp.s: cmake_force
 
 # Object files for target visitor_pattern
 visitor_pattern_OBJECTS = \
-"CMakeFiles/visitor_pattern.dir/tools.cpp.o" \
+"CMakeFiles/visitor_pattern.dir/utility.cpp.o" \
 "CMakeFiles/visitor_pattern.dir/visitors/ast.cpp.o" \
 "CMakeFiles/visitor_pattern.dir/visitors/main.cpp.o"
 
 # External object files for target visitor_pattern
 visitor_pattern_EXTERNAL_OBJECTS =
 
-visitor_pattern: CMakeFiles/visitor_pattern.dir/tools.cpp.o
+visitor_pattern: CMakeFiles/visitor_pattern.dir/utility.cpp.o
 visitor_pattern: CMakeFiles/visitor_pattern.dir/visitors/ast.cpp.o
 visitor_pattern: CMakeFiles/visitor_pattern.dir/visitors/main.cpp.o
 visitor_pattern: CMakeFiles/visitor_pattern.dir/build.make

@@ -1,5 +1,5 @@
 //  ----------------------------------------------------------------------------
-//  Header file for the main class.        main.cpp
+//  Header file for the main class.                              main.cpp
 //  Created by Ferhat Erata <ferhat.erata@yale.edu> on November 16, 2019.
 //  Copyright (c) 2019 Yale University. All rights reserved.
 // -----------------------------------------------------------------------------
@@ -7,12 +7,12 @@
 #include "ast.hpp"
 #include "evaluatorVisitor.hpp"
 #include "printerVisitor.hpp"
+#include "utility.hpp"
 #include <iostream>
 #include <memory>
-#include <tools.hpp>
 
 int main() {
-    banner();
+    utility::banner();
     {
         auto expression = // ((3 + (4 * 6)) + 2) = 29
             std::make_unique<AddExpression>(
@@ -70,6 +70,6 @@ int main() {
         std::cout << printer.print(*expression) << " = "
                   << evaluator.evaluate(*expression);
     }
-    bye();
+    utility::bye();
     return 0;
 }

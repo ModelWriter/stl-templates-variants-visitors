@@ -4,9 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ferhat/git/variants-visitors/utility.cpp" "/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/visitor_pattern.dir/utility.cpp.o"
-  "/home/ferhat/git/variants-visitors/visitors/ast.cpp" "/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/visitor_pattern.dir/visitors/ast.cpp.o"
-  "/home/ferhat/git/variants-visitors/visitors/main.cpp" "/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/visitor_pattern.dir/visitors/main.cpp.o"
+  "/home/ferhat/git/variants-visitors/HowTo.cpp" "/home/ferhat/git/variants-visitors/cmake-build-debug/CMakeFiles/constructor_destructor.dir/HowTo.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

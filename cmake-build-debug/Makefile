@@ -39,10 +39,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/92/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/99/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/92/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/99/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/ferhat/git/variants-visitors/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/92/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/99/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/92/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/99/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -137,30 +137,17 @@ var_overload_2/fast:
 .PHONY : var_overload_2/fast
 
 #=============================================================================
-# Target rules for targets named HowTo
+# Target rules for targets named constructor_destructor
 
 # Build rule for target.
-HowTo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 HowTo
-.PHONY : HowTo
+constructor_destructor: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 constructor_destructor
+.PHONY : constructor_destructor
 
 # fast build rule for target.
-HowTo/fast:
-	$(MAKE) -f CMakeFiles/HowTo.dir/build.make CMakeFiles/HowTo.dir/build
-.PHONY : HowTo/fast
-
-#=============================================================================
-# Target rules for targets named var_overload_1
-
-# Build rule for target.
-var_overload_1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 var_overload_1
-.PHONY : var_overload_1
-
-# fast build rule for target.
-var_overload_1/fast:
-	$(MAKE) -f CMakeFiles/var_overload_1.dir/build.make CMakeFiles/var_overload_1.dir/build
-.PHONY : var_overload_1/fast
+constructor_destructor/fast:
+	$(MAKE) -f CMakeFiles/constructor_destructor.dir/build.make CMakeFiles/constructor_destructor.dir/build
+.PHONY : constructor_destructor/fast
 
 #=============================================================================
 # Target rules for targets named var_vanilla
@@ -174,6 +161,19 @@ var_vanilla: cmake_check_build_system
 var_vanilla/fast:
 	$(MAKE) -f CMakeFiles/var_vanilla.dir/build.make CMakeFiles/var_vanilla.dir/build
 .PHONY : var_vanilla/fast
+
+#=============================================================================
+# Target rules for targets named var_overload_1
+
+# Build rule for target.
+var_overload_1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 var_overload_1
+.PHONY : var_overload_1
+
+# fast build rule for target.
+var_overload_1/fast:
+	$(MAKE) -f CMakeFiles/var_overload_1.dir/build.make CMakeFiles/var_overload_1.dir/build
+.PHONY : var_overload_1/fast
 
 #=============================================================================
 # Target rules for targets named var_overload_3
@@ -194,7 +194,7 @@ HowTo.o: HowTo.cpp.o
 
 # target to build an object file
 HowTo.cpp.o:
-	$(MAKE) -f CMakeFiles/HowTo.dir/build.make CMakeFiles/HowTo.dir/HowTo.cpp.o
+	$(MAKE) -f CMakeFiles/constructor_destructor.dir/build.make CMakeFiles/constructor_destructor.dir/HowTo.cpp.o
 .PHONY : HowTo.cpp.o
 
 HowTo.i: HowTo.cpp.i
@@ -203,7 +203,7 @@ HowTo.i: HowTo.cpp.i
 
 # target to preprocess a source file
 HowTo.cpp.i:
-	$(MAKE) -f CMakeFiles/HowTo.dir/build.make CMakeFiles/HowTo.dir/HowTo.cpp.i
+	$(MAKE) -f CMakeFiles/constructor_destructor.dir/build.make CMakeFiles/constructor_destructor.dir/HowTo.cpp.i
 .PHONY : HowTo.cpp.i
 
 HowTo.s: HowTo.cpp.s
@@ -212,35 +212,35 @@ HowTo.s: HowTo.cpp.s
 
 # target to generate assembly for a file
 HowTo.cpp.s:
-	$(MAKE) -f CMakeFiles/HowTo.dir/build.make CMakeFiles/HowTo.dir/HowTo.cpp.s
+	$(MAKE) -f CMakeFiles/constructor_destructor.dir/build.make CMakeFiles/constructor_destructor.dir/HowTo.cpp.s
 .PHONY : HowTo.cpp.s
 
-tools.o: tools.cpp.o
+utility.o: utility.cpp.o
 
-.PHONY : tools.o
+.PHONY : utility.o
 
 # target to build an object file
-tools.cpp.o:
-	$(MAKE) -f CMakeFiles/visitor_pattern.dir/build.make CMakeFiles/visitor_pattern.dir/tools.cpp.o
-.PHONY : tools.cpp.o
+utility.cpp.o:
+	$(MAKE) -f CMakeFiles/visitor_pattern.dir/build.make CMakeFiles/visitor_pattern.dir/utility.cpp.o
+.PHONY : utility.cpp.o
 
-tools.i: tools.cpp.i
+utility.i: utility.cpp.i
 
-.PHONY : tools.i
+.PHONY : utility.i
 
 # target to preprocess a source file
-tools.cpp.i:
-	$(MAKE) -f CMakeFiles/visitor_pattern.dir/build.make CMakeFiles/visitor_pattern.dir/tools.cpp.i
-.PHONY : tools.cpp.i
+utility.cpp.i:
+	$(MAKE) -f CMakeFiles/visitor_pattern.dir/build.make CMakeFiles/visitor_pattern.dir/utility.cpp.i
+.PHONY : utility.cpp.i
 
-tools.s: tools.cpp.s
+utility.s: utility.cpp.s
 
-.PHONY : tools.s
+.PHONY : utility.s
 
 # target to generate assembly for a file
-tools.cpp.s:
-	$(MAKE) -f CMakeFiles/visitor_pattern.dir/build.make CMakeFiles/visitor_pattern.dir/tools.cpp.s
-.PHONY : tools.cpp.s
+utility.cpp.s:
+	$(MAKE) -f CMakeFiles/visitor_pattern.dir/build.make CMakeFiles/visitor_pattern.dir/utility.cpp.s
+.PHONY : utility.cpp.s
 
 variants/Variants.o: variants/Variants.cpp.o
 
@@ -411,19 +411,19 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... visitor_pattern"
 	@echo "... var_overload_2"
-	@echo "... edit_cache"
-	@echo "... HowTo"
-	@echo "... var_overload_1"
+	@echo "... constructor_destructor"
 	@echo "... var_vanilla"
+	@echo "... var_overload_1"
 	@echo "... var_overload_3"
 	@echo "... HowTo.o"
 	@echo "... HowTo.i"
 	@echo "... HowTo.s"
-	@echo "... tools.o"
-	@echo "... tools.i"
-	@echo "... tools.s"
+	@echo "... utility.o"
+	@echo "... utility.i"
+	@echo "... utility.s"
 	@echo "... variants/Variants.o"
 	@echo "... variants/Variants.i"
 	@echo "... variants/Variants.s"

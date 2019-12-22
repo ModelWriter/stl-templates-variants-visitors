@@ -1,5 +1,5 @@
 //  ----------------------------------------------------------------------------
-//  Header file for the HowTo class.        HowTo.cpp
+//  Header file for the HowTo class.                                   HowTo.cpp
 //  Created by Ferhat Erata <ferhat.erata@yale.edu> on November 15, 2019.
 //  Copyright (c) 2019 Yale University. All rights reserved.
 // -----------------------------------------------------------------------------
