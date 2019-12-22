@@ -3,7 +3,7 @@ project(variants-visitors-stl)
 
 set(CMAKE_CXX_STANDARD 17)
 
-include_directories(. variants)
+include_directories(. variants templates)
 
 
 add_compile_options(-O1 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-virtual-dtor)
@@ -11,6 +11,9 @@ add_compile_options(-O1 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-vir
 
 add_executable(constructor_destructor
         HowTo.cpp)
+
+add_executable(templates
+        templates/templates.cpp)
 
 add_executable(visitor_pattern
         utility.hpp
