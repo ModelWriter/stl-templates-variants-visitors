@@ -64,6 +64,48 @@ add_executable(stl_copy
         stl/stl.hpp
         stl/stl_copy.cpp)
 
+add_executable(stl_generate
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_generate.cpp)
+
+add_executable(stl_remove
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_remove.cpp)
+
+add_executable(stl_max_element
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_max_element.cpp)
+
+add_executable(stl_min_element
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_min_element.cpp)
+
+add_executable(stl_min
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_min.cpp)
+
+add_executable(stl_max
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_max.cpp)
+
 add_executable(visitor_pattern
         utility.hpp
         utility.cpp
