@@ -28,7 +28,7 @@ class Deriv : public Base {
     ~Deriv() override { cout << "Deriv destructor" << endl; }
 };
 
-int main(int argc, char* argv[]) {
+int main() {
     cout << "-----" << endl;
     Base* bp = new Deriv;
     cout << "-----" << endl;

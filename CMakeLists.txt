@@ -99,6 +99,13 @@ add_executable(stl_min
         stl/stl.hpp
         stl/stl_min.cpp)
 
+add_executable(stl_minmax_element
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_mimmax_element.cpp)
+
 add_executable(stl_max
         utility.cpp
         utility.hpp

@@ -396,6 +396,60 @@ T min(std::initializer_list<T> ilist, Compare comp) {
     return *my::min_element(ilist.begin(), ilist.end(), comp);
 }
 
+// -----------------------------------------------------------------------------
+// Finds the smallest and greatest element in the range [first, last).
+// 3) Elements are compared using the given binary comparison function comp.
+// https://en.cppreference.com/w/cpp/algorithm/minmax_element
+template <class ForwardIt, class Compare>
+std::pair<ForwardIt, ForwardIt> minmax_element(ForwardIt first, ForwardIt last,
+                                               Compare comp) {
+    auto min = first, max = first;
+
+    if (first == last || ++first == last)
+        return {min, max};
+
+    if (comp(*first, *min)) {
+        min = first;
+    } else {
+        max = first;
+    }
+
+    while (++first != last) {
+        auto i = first;
+        if (++first == last) {
+            if (comp(*i, *min))
+                min = i;
+            else if (!(comp(*i, *max)))
+                max = i;
+            break;
+        } else {
+            if (comp(*first, *i)) {
+                if (comp(*first, *min))
+                    min = first;
+                if (!(comp(*i, *max)))
+                    max = i;
+            } else {
+                if (comp(*i, *min))
+                    min = i;
+                if (!(comp(*first, *max)))
+                    max = first;
+            }
+        }
+    }
+    return {min, max};
+}
+
+// -----------------------------------------------------------------------------
+// Finds the smallest and greatest element in the range [first, last).
+// 1) Elements are compared using operator<.
+// https://en.cppreference.com/w/cpp/algorithm/minmax_element
+template <class ForwardIt>
+std::pair<ForwardIt, ForwardIt> minmax_element(ForwardIt first,
+                                               ForwardIt last) {
+    using value_type = typename std::iterator_traits<ForwardIt>::value_type;
+    return my::minmax_element(first, last, std::less<value_type>());
+}
+
 } // namespace my
 
 #endif // STL_PLAYGROUND_HPP
