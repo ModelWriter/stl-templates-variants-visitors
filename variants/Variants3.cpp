@@ -21,6 +21,7 @@ struct Hsv {
     int saturation;
     int value;
 };
+
 using Color = std::variant<Rgb, Hsv>;
 struct ChangeColor {
     Color color;

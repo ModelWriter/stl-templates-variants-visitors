@@ -113,6 +113,13 @@ add_executable(stl_max
         stl/stl.hpp
         stl/stl_max.cpp)
 
+add_executable(stl_heap
+        utility.cpp
+        utility.hpp
+        stl/stl.cpp
+        stl/stl.hpp
+        stl/stl_heap.cpp)
+
 add_executable(visitor_pattern
         utility.hpp
         utility.cpp
