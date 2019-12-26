@@ -14,6 +14,112 @@
 namespace my {
 
 // -----------------------------------------------------------------------------
+// Checks whether lhs is greater than rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/greater
+template <class T = void> struct greater {
+    constexpr bool operator()(const T& lhs, const T& rhs) const {
+        return lhs > rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Checks whether lhs is less than rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/less
+template <class T = void> struct less {
+    constexpr bool operator()(const T& lhs, const T& rhs) const {
+        return lhs < rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Checks whether lhs is greater than or equal to rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/greater_equal
+template <class T = void> struct greater_equal {
+    constexpr bool operator()(const T& lhs, const T& rhs) const {
+        return lhs >= rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Checks if lhs is less than or equal to rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/less_equal
+template <class T = void> struct less_equal {
+    constexpr bool operator()(const T& lhs, const T& rhs) const {
+        return lhs <= rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Checks whether lhs is not equal to rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/not_equal_to
+template <class T = void> struct not_equal_to {
+    constexpr bool operator()(const T& lhs, const T& rhs) const {
+        return lhs != rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Checks whether lhs is not equal to rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/equal_to
+template <class T = void> struct equal_to {
+    constexpr bool operator()(const T& lhs, const T& rhs) const {
+        return lhs == rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Returns the sum of lhs and rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/plus
+template <class T = void> struct plus {
+    constexpr T operator()(const T& lhs, const T& rhs) const {
+        return lhs + rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Returns the difference between lhs and rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/minus
+template <class T = void> struct minus {
+    constexpr T operator()(const T& lhs, const T& rhs) const {
+        return lhs - rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Returns the product of lhs and rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/multiplies
+template <class T = void> struct multiplies {
+    constexpr T operator()(const T& lhs, const T& rhs) const {
+        return lhs * rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Returns the product of lhs and rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/divides
+template <class T = void> struct divides {
+    constexpr T operator()(const T& lhs, const T& rhs) const {
+        return lhs / rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Returns the remainder of the division of lhs by rhs.
+// https://en.cppreference.com/w/cpp/utility/functional/modulus
+template <class T = void> struct modulus {
+    constexpr T operator()(const T& lhs, const T& rhs) const {
+        return lhs % rhs;
+    }
+};
+
+// -----------------------------------------------------------------------------
+// Returns the negation of arg.
+// https://en.cppreference.com/w/cpp/utility/functional/negate
+template <class T = void> struct negate {
+    constexpr T operator()(const T& arg) const { return -arg; }
+};
+
+// -----------------------------------------------------------------------------
 // Applies the given function object f to the result of dereferencing every
 // iterator in the range [first, last), in order
 // https://en.cppreference.com/w/cpp/algorithm/for_each
@@ -447,7 +553,7 @@ template <class ForwardIt>
 std::pair<ForwardIt, ForwardIt> minmax_element(ForwardIt first,
                                                ForwardIt last) {
     using value_type = typename std::iterator_traits<ForwardIt>::value_type;
-    return my::minmax_element(first, last, std::less<value_type>());
+    return my::minmax_element(first, last, my::less<value_type>());
 }
 
 } // namespace my
