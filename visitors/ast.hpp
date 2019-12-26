@@ -31,7 +31,7 @@ class BinaryExpression : public Expression {
         assert(lhs && rhs);
     }
 
-    [[nodiscard]] Expression& left() const { return *lhs; }
+    [[nodiscard]] Expression& left() { return *lhs; }
     [[nodiscard]] Expression& right() const { return *rhs; }
 };
 

@@ -1,0 +1,9 @@
+add_executable(visitor_pattern
+        ../utility.hpp
+        ../utility.cpp
+        ast.cpp
+        ast.hpp
+        main.cpp
+        visitor.hpp
+        printerVisitor.hpp
+        evaluatorVisitor.hpp)
