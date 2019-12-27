@@ -12,6 +12,10 @@
 static bool abs_compare(int a, int b) { return (std::abs(a) < std::abs(b)); }
 bool myfn(int i, int j) { return i < j; }
 
+struct myclass {
+    bool operator() (int i,int j) { return i<j; }
+} myobj;
+
 int main() {
 
     std::vector<int> v{3, 1, -14, 1, 5, 9};

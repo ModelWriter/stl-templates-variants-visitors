@@ -12,11 +12,15 @@
 static bool abs_compare(int a, int b) { return (std::abs(a) < std::abs(b)); }
 bool myfn(int i, int j) { return i < j; }
 
+struct myclass {
+    bool operator() (int i,int j) { return i<j; }
+} myobj;
+
 int main() {
 
     std::vector<int> v{3, 1, 4, 1, 5, 9};
 
-    std::vector<int>::iterator result = std::min_element(v.begin(), v.end());
+    std::vector<int>::iterator result = my::min_element(v.begin(), v.end());
     std::cout << "min element at: " << std::distance(v.begin(), result);
     // min element at: 1
 
