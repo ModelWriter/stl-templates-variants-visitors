@@ -11,6 +11,7 @@ add_subdirectory(variants)
 add_subdirectory(visitors)
 add_subdirectory(smartpointer)
 add_subdirectory(raii)
+add_subdirectory(containers)
 
 add_compile_options(-O1 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-virtual-dtor)
 

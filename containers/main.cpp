@@ -1,26 +1,17 @@
-// ==========================================================================
-// Template example -- Using a stack template.
-// Alice E. Fischer June 9, 200file: Evaluate/main.cpp
-//
-#include "eval.hpp"
-// ==========================================================================
-int main( void )
-{
-    char buf[256] = "Hello";
-    double answer = 0;
+//  ----------------------------------------------------------------------------
+//  Main file for the container classes.                                main.hpp
+//  Created by Ferhat Erata <ferhat.erata@yale.edu> on December 21, 2019.
+//  Copyright (c) 2019 Yale University. All rights reserved.
+// -----------------------------------------------------------------------------
 
-    banner();
-    Eval::instructions();
-    for(;;){
-        cout <<"\n\nEnter an expression: ";
-        cin >> ws;
-        cin.get( buf, 256 );
-        if ( buf[0] == ';') break;
-        istringstream inst( buf);
-        Eval E;
-        answer = E.evaluate( inst );
-        cout <<'\n' << answer <<" = " <<buf <<endl;
-    }
-    bye();
+#include "array.hpp"
+#include "stack.hpp"
+#include "utility.hpp"
+
+// -----------------------------------------------------------------------------
+int main() {
+    utility::banner();
+
+    utility::bye();
     return 0;
 }
