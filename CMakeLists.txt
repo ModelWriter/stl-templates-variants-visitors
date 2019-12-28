@@ -9,7 +9,7 @@ add_subdirectory(functors)
 add_subdirectory(stl)
 add_subdirectory(variants)
 add_subdirectory(visitors)
-add_subdirectory(templates)
+add_subdirectory(smartpointer)
 
 add_compile_options(-O1 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-virtual-dtor)
 

@@ -14,11 +14,11 @@ int main() {
         }
 
         for (int j : vector) {
-            cout << j << endl;
+            std::cout << j << std::endl;
         }
 
         for (auto itr = vector.rbegin(); itr != vector.rend(); ++itr) {
-            cout << (*itr) << endl;
+            std::cout << (*itr) << std::endl;
         }
 
         struct E {
@@ -30,37 +30,37 @@ int main() {
 
         for (auto itr = vt.rbegin(); itr != vt.rend(); ++itr) {
             auto& e = *itr;
-            cout << e.a << endl;
-            cout << e.b << endl;
+            std::cout << e.a << std::endl;
+            std::cout << e.b << std::endl;
         };
 
-        cout << "Create smart pointer sp using default constructor" << endl;
+        std::cout << "Create smart pointer sp using default constructor" << std::endl;
         SPtr<double> sp;
         if (sp.empty())
-            cout << "  Smart pointer " << sp.id() << " is empty" << endl;
+            std::cout << "  Smart pointer " << sp.id() << " is empty" << std::endl;
 
-        cout << "\nCreate new double variable xp" << endl;
+        std::cout << "\nCreate new double variable xp" << std::endl;
         auto* xp = new double(12.345);
-        cout << "  *xp = " << *xp << endl;
+        std::cout << "  *xp = " << *xp << std::endl;
 
-        cout << "\nCreate temporary smart pointer to manage xp\n"
+        std::cout << "\nCreate temporary smart pointer to manage xp\n"
                 "  and move assign it to sp"
-             << endl;
+             << std::endl;
         sp = SPtr(xp); // move new SPtr to sp
-        cout << "  *sp = " << *sp << endl;
+        std::cout << "  *sp = " << *sp << std::endl;
 
-        cout << "\nCreate copy of SPtr " << sp.id() << endl;
+        std::cout << "\nCreate copy of SPtr " << sp.id() << std::endl;
         SPtr sp2(sp); // make a copy
-        cout << "  Copy is SPtr " << sp2.id() << endl;
+        std::cout << "  Copy is SPtr " << sp2.id() << std::endl;
 
-        cout << "\nAssigning *sp2 = 67.890;" << endl;
+        std::cout << "\nAssigning *sp2 = 67.890;" << std::endl;
         *sp2 = 67.890;
-        cout << "  *sp = " << *sp << endl;
-        cout << "  *sp2 = " << *sp2 << endl;
+        std::cout << "  *sp = " << *sp << std::endl;
+        std::cout << "  *sp2 = " << *sp2 << std::endl;
 
-        cout << "\nLeaving main program" << endl;
+        std::cout << "\nLeaving main program" << std::endl;
     } catch (SPexception& e) {
-        cerr << e.what() << endl;
+        std::cerr << e.what() << std::endl;
         throw;
     }
 }

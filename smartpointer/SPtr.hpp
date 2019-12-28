@@ -7,7 +7,6 @@
 #include <utility>
 
 #include "Serial.hpp"
-using namespace std;
 
 // ----------------------------------------------------------------------------
 // Smart pointer exception class
@@ -45,7 +44,7 @@ template <typename T> class SPtr {
     SPtr& operator=(SPtr&& sp);
     // Destructor
     ~SPtr() {
-        cout << "  Destructor called for SPtr " << id() << endl;
+        std::cout << "  Destructor called for SPtr " << id() << std::endl;
         reset();
     }
 
@@ -64,20 +63,20 @@ template <typename T> class SPtr {
 
 // Default constructor
 template <typename T> SPtr<T>::SPtr() : count(nullptr), target(nullptr) {
-    cout << "  Default constructor called for Sptr " << id() << endl;
+    std::cout << "  Default constructor called for Sptr " << id() << std::endl;
 }
 
 // Construct an SPtr to manage p
 template <typename T> SPtr<T>::SPtr(T* p) : count(new unsigned(1)), target(p) {
-    cout << "  SPtr(T*) constructor called for Sptr " << id() << endl;
+    std::cout << "  SPtr(T*) constructor called for Sptr " << id() << std::endl;
 }
 //------------------------------------------------------------------------------
 // Copy constructor
 template <typename T>
 SPtr<T>::SPtr(const SPtr& sp) : count(sp.count), target(sp.target) {
     ++*count;
-    cout << "  Copy constructor from Sptr " << sp.id() << " to " << id()
-         << endl;
+    std::cout << "  Copy constructor from Sptr " << sp.id() << " to " << id()
+              << std::endl;
 }
 
 //------------------------------------------------------------------------------
@@ -87,7 +86,8 @@ template <typename T> SPtr<T>& SPtr<T>::operator=(const SPtr& sp) {
     count = sp.count;
     target = sp.target; // copy pointer
     ++*count;
-    cout << "  Copy assignment from Sptr " << sp.id() << " to " << id() << endl;
+    std::cout << "  Copy assignment from Sptr " << sp.id() << " to " << id()
+              << std::endl;
     return *this;
 }
 
@@ -97,8 +97,8 @@ template <typename T>
 SPtr<T>::SPtr(SPtr&& sp) noexcept : count(sp.count), target(sp.target) {
     sp.count = nullptr;
     sp.target = nullptr;
-    cout << "  Move constructor from Sptr " << sp.id() << " to " << id()
-         << endl;
+    std::cout << "  Move constructor from Sptr " << sp.id() << " to " << id()
+              << std::endl;
 }
 
 //------------------------------------------------------------------------------
@@ -109,7 +109,8 @@ template <typename T> SPtr<T>& SPtr<T>::operator=(SPtr&& sp) {
     target = sp.target;
     sp.count = nullptr;
     sp.target = nullptr;
-    cout << "  Move assignment from Sptr " << sp.id() << " to " << id() << endl;
+    std::cout << "  Move assignment from Sptr " << sp.id() << " to " << id()
+              << std::endl;
     return *this;
 }
 
@@ -124,7 +125,7 @@ template <typename T> void SPtr<T>::reset() {
     if (--*count > 0)
         return;
     // No other references, so release managed storage
-    cout << "  Releasing storage managed by Sptr " << id() << endl;
+    std::cout << "  Releasing storage managed by Sptr " << id() << std::endl;
     delete count;
     delete target;
     count = nullptr;

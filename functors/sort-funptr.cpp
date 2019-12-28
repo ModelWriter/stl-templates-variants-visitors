@@ -1,40 +1,39 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
-using namespace std;
 
 //--------------------------------------------------------------------
-bool descendingOrder( int i, int j) { return (i>j); }
-bool ascendingOrder( int i, int j)  { return (i<j); }
+bool descendingOrder(int i, int j) { return (i > j); }
+bool ascendingOrder(int i, int j) { return (i < j); }
 
-//--------------------------------------------------------------------
-void print(vector<int>& vec) {
-   cout << "myvector contains:";
-   for (vector<int>::iterator it=vec.begin(); it!=vec.end(); ++it)
-      cout << ' ' << *it;
-   cout << '\n';
+// -----------------------------------------------------------------------------
+void print(std::vector<int>& vec) {
+    std::cout << "myvector contains:";
+    for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); ++it)
+        std::cout << ' ' << *it;
+    std::cout << '\n';
 }
 
-//--------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 int main() {
-   
+
     // Test vector
-    int myints[] = {32,71,12,45,26,80,53,33};
-    vector<int> myvector (myints, myints+8); // 32 71 12 45 26 80 53 33
+    int myints[] = {32, 71, 12, 45, 26, 80, 53, 33};
+    std::vector<int> myvector(myints, myints + 8); // 32 71 12 45 26 80 53 33
 
     // Define expected type for a sort comparator
-    using Comp = bool (*) (int, int);
+    using Comp = bool (*)(int, int);
 
     // Define a pointer to a comparator
     Comp cptr;
 
     // Set pointer and sort descending
     cptr = descendingOrder;
-    sort( myvector.begin(), myvector.end(), cptr );
-    print( myvector );
+    std::sort(myvector.begin(), myvector.end(), cptr);
+    print(myvector);
 
     // Set pointer and sort ascending
     cptr = ascendingOrder;
-    sort ( myvector.begin(), myvector.end(), cptr );
-    print( myvector );    
+    std::sort(myvector.begin(), myvector.end(), cptr);
+    print(myvector);
 }

@@ -1,58 +1,65 @@
-#include <iostream>
-#include <iomanip>
 #include <functional>
+#include <iomanip>
+#include <iostream>
 #include <map>
-using namespace std;
 
-//--------------------------------------------------------------------
+// -----------------------------------------------------------------------------
 // Sales tax computation
 int main() {
 
-    using taxFunType = function<double(double)>;
-    map<string,taxFunType> taxTable;
-    map<string,taxFunType>::iterator it;
+    using taxFunType = std::function<double(double)>;
+    std::map<std::string, taxFunType> taxTable;
+    std::map<std::string, taxFunType>::iterator it;
 
     // Read tax table
-    cout << "Enter state sales tax rates.  Type \". 0\" when done." << endl;
+    std::cout << "Enter state sales tax rates.  Type \". 0\" when done."
+              << std::endl;
     for (;;) {
-        string state;
+        std::string state;
         double rate;
 
         // Create tax computation function
-        cout << "Please enter state and tax rate: ";
-        cin >> state >> rate;
-        if (!cin.good() || state==".") break;
-    
-        // Enter it ito the tax rate table    
-        taxFunType taxfun = [rate](double amt) { return amt*rate; };
+        std::cout << "Please enter state and tax rate: ";
+        std::cin >> state >> rate;
+        if (!std::cin.good() || state == ".")
+            break;
+
+        // Enter it ito the tax rate table
+        taxFunType taxfun = [rate](double amt) { return amt * rate; };
         taxTable.emplace(state, taxfun);
     }
-    if (!cin.good()) { cout << "aborting" << endl; return 1; }
-    
+    if (!std::cin.good()) {
+        std::cout << "aborting" << std::endl;
+        return 1;
+    }
+
     // Compute sales tax on individual sales
-    cout << "\nEnter individual sales.  Type \". 0\" when done." << endl;
-    cin.clear();
+    std::cout << "\nEnter individual sales.  Type \". 0\" when done."
+              << std::endl;
+    std::cin.clear();
     for (;;) {
-        string state;
+        std::string state;
         double sale;
         double tax;
-        
+
         // Compute sales tax
-        cout << "\nPlease enter state and purchase amount: ";
-        cin >> state >> sale;
-        if (!cin.good() || state==".") break;
+        std::cout << "\nPlease enter state and purchase amount: ";
+        std::cin >> state >> sale;
+        if (!std::cin.good() || state == ".")
+            break;
         it = taxTable.find(state);
         if (it == taxTable.end()) {
-            cout << "Can't find " << state << " in tax table" << endl;
-        }
-        else {
-            taxFunType& computeTax = it->second;  // get tax computer from tax table
-            tax = computeTax(sale);               // compute tax
-            cout << setprecision(2) << fixed;
-            cout << state << " tax on $" << sale << " is $" << tax << endl;
+            std::cout << "Can't find " << state << " in tax table" << std::endl;
+        } else {
+            taxFunType& computeTax =
+                it->second;         // get tax computer from tax table
+            tax = computeTax(sale); // compute tax
+            std::cout << std::setprecision(2) << std::fixed;
+            std::cout << state << " tax on $" << sale << " is $" << tax
+                      << std::endl;
         }
     }
-    cout << "Goodbye" << endl;
+    std::cout << "Goodbye" << std::endl;
 }
 
 /*
