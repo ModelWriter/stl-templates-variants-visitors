@@ -10,12 +10,14 @@ add_subdirectory(stl)
 add_subdirectory(variants)
 add_subdirectory(visitors)
 add_subdirectory(smartpointer)
+add_subdirectory(raii)
 
 add_compile_options(-O1 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-virtual-dtor)
 
 
 add_executable(constructor_destructor
-        HowTo.cpp raii/special.cpp)
+        HowTo.cpp
+        )
 
 
 
