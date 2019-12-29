@@ -23,6 +23,18 @@ int main() {
         Ex2(const Ex2&) = default; // trivial and non-throwing
     };
 
+    std::cout << "\n" << utility::separator();
+    std::cout
+        << "    struct Ex1 {\n"
+           "        std::string str; // member has a non-trivial copy ctor\n"
+           "    };\n"
+           "    struct Ex2 {\n"
+           "        int n;\n"
+           "        Ex2(const Ex2&) = default; // trivial and non-throwing\n"
+           "    };"
+        << std::endl;
+    std::cout << "\n" << utility::separator();
+
     std::cout << std::boolalpha << "Ex1 is copy-constructible? "
               << std::is_copy_constructible<Ex1>::value << '\n'
               << "Ex1 is trivially copy-constructible? "
@@ -33,8 +45,6 @@ int main() {
               << std::is_nothrow_copy_constructible<Ex2>::value << '\n';
 
     // -------------------------------------------------------------------------
-    std::cout << "\n" << utility::separator();
-    // -------------------------------------------------------------------------
 
     class Foo {
         int v1;
@@ -44,6 +54,18 @@ int main() {
         Foo(int n) : v1(n), v2() {}
         Foo(int n, double f) noexcept : v1(n), v2(f) {}
     };
+
+    std::cout << "\n" << utility::separator();
+    std::cout << "    class Foo {\n"
+                 "        int v1;\n"
+                 "        double v2;\n"
+                 "\n"
+                 "      public:\n"
+                 "        Foo(int n) : v1(n), v2() {}\n"
+                 "        Foo(int n, double f) noexcept : v1(n), v2(f) {}\n"
+                 "    };"
+              << std::endl;
+    std::cout << "\n" << utility::separator();
 
     std::cout << "Foo is ...\n"
               << std::boolalpha << "\tTrivially-constructible from const Foo&? "
@@ -58,8 +80,6 @@ int main() {
               << std::is_nothrow_constructible<Foo, int, double>::value << '\n';
 
     // -------------------------------------------------------------------------
-    std::cout << "\n" << utility::separator();
-    // -------------------------------------------------------------------------
 
     struct NoMove {
         // prevents implicit declaration of default move constructor
@@ -67,6 +87,18 @@ int main() {
         // copy constructor can bind to an rvalue argument
         NoMove(const NoMove&) {}
     };
+
+    std::cout << "\n" << utility::separator();
+    std::cout << "    struct NoMove {\n"
+                 "        // prevents implicit declaration of default move "
+                 "constructor\n"
+                 "        // however, the class is still move-constructible "
+                 "because its\n"
+                 "        // copy constructor can bind to an rvalue argument\n"
+                 "        NoMove(const NoMove&) {}\n"
+                 "    };"
+              << std::endl;
+    std::cout << "\n" << utility::separator();
 
     std::cout << std::boolalpha << "Ex1 is move-constructible? "
               << std::is_move_constructible<Ex1>::value << '\n'
@@ -85,8 +117,17 @@ int main() {
               << std::is_nothrow_move_constructible<NoMove>::value << '\n';
 
     // -------------------------------------------------------------------------
+
+    struct Ex3 {
+        int n;
+    };
+
     std::cout << "\n" << utility::separator();
-    // -------------------------------------------------------------------------
+    std::cout << "    struct Ex3 {\n"
+                 "        int n;\n"
+                 "    };"
+              << std::endl;
+    std::cout << "\n" << utility::separator();
 
     std::cout << std::boolalpha << "int is assignable from int? "
               << std::is_assignable<int, int>::value
@@ -100,6 +141,67 @@ int main() {
               << std::is_nothrow_assignable<int&, double>::value << '\n'
               << "string is assignable from double? "
               << std::is_assignable<std::string, double>::value << '\n'
-              << "Ex1& is trivially assignable from const Ex1&? "
-              << std::is_trivially_assignable<Ex1&, const Ex1&>::value << '\n';
+              << "Ex3& is trivially assignable from const Ex3&? "
+              << std::is_trivially_assignable<Ex3&, const Ex3&>::value << '\n';
+
+    // -------------------------------------------------------------------------
+
+    struct Foo1 {
+        int n;
+    };
+
+    std::cout << "\n" << utility::separator();
+    std::cout << "    struct Foo1 {\n"
+                 "        int n;\n"
+                 "    };"
+              << std::endl;
+    std::cout << "\n" << utility::separator();
+
+    std::cout << std::boolalpha << "Foo1 is trivially copy-assignable? "
+              << std::is_trivially_copy_assignable<Foo1>::value << '\n'
+              << "int[2] is copy-assignable? "
+              << std::is_copy_assignable<int[2]>::value << '\n'
+              << "int is nothrow copy-assignable? "
+              << std::is_nothrow_copy_assignable<int>::value << '\n';
+
+    // -------------------------------------------------------------------------
+
+    struct Foo2 {
+        int n;
+    };
+    struct NoMove1 {
+        // prevents implicit declaration of default move assignment operator
+        // however, the class is still move-assignable because its
+        // copy assignment operator can bind to an rvalue argument
+        NoMove1& operator=(const NoMove1&) { return *this; }
+    };
+
+    std::cout << "\n" << utility::separator();
+    std::cout
+        << "    struct Foo2 {\n"
+           "        int n;\n"
+           "    };\n"
+           "    struct NoMove1 {\n"
+           "        // prevents implicit declaration of default move "
+           "assignment operator\n"
+           "        // however, the class is still move-assignable because "
+           "its\n"
+           "        // copy assignment operator can bind to an rvalue "
+           "argument\n"
+           "        NoMove1& operator=(const NoMove1&) { return *this; }\n"
+           "    };"
+        << std::endl;
+    std::cout << "\n" << utility::separator();
+
+    std::cout << std::boolalpha << "std::string is nothrow move-assignable? "
+              << std::is_nothrow_move_assignable<std::string>::value << '\n'
+              << "int[2] is move-assignable? "
+              << std::is_move_assignable<int[2]>::value << '\n'
+              << "Foo2 is trivially move-assignable? "
+              << std::is_trivially_move_assignable<Foo2>::value << '\n';
+
+    std::cout << std::boolalpha << "NoMove1 is move-assignable? "
+              << std::is_move_assignable<NoMove1>::value << '\n'
+              << "NoMove1 is nothrow move-assignable? "
+              << std::is_nothrow_move_assignable<NoMove1>::value << '\n';
 }

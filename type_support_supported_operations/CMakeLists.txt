@@ -1,4 +1,6 @@
 
 
-add_executable(is_copy_constructible
-        is_copy_constructible.cpp)
+add_executable(supported_operations
+        supported_operations.cpp
+        ../utility.cpp
+        ../utility.hpp)

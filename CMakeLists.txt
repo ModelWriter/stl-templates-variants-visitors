@@ -13,7 +13,9 @@ add_subdirectory(smart_pointer)
 add_subdirectory(raii)
 add_subdirectory(containers)
 add_subdirectory(contracts)
-add_subdirectory(constexpression)
+add_subdirectory(const_expression)
+add_subdirectory(static_assert)
+add_subdirectory(type_support_supported_operations)
 
 add_compile_options(-O2 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-virtual-dtor)
 
