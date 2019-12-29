@@ -204,4 +204,32 @@ int main() {
               << std::is_move_assignable<NoMove1>::value << '\n'
               << "NoMove1 is nothrow move-assignable? "
               << std::is_nothrow_move_assignable<NoMove1>::value << '\n';
+
+    // -------------------------------------------------------------------------
+
+    struct Foo2 {
+        std::string str;
+        ~Foo2() noexcept {};
+    };
+    struct Bar {
+        ~Bar() = default;
+    };
+
+    std::cout << "\n" << utility::separator();
+    std::cout << "    struct Foo2 {\n"
+                 "        std::string str;\n"
+                 "        ~Foo2() noexcept {};\n"
+                 "    };\n"
+                 "    struct Bar {\n"
+                 "        ~Bar() = default;\n"
+                 "    };"
+              << std::endl;
+    std::cout << "\n" << utility::separator();
+
+    std::cout << std::boolalpha << "std::string is destructible? "
+              << std::is_destructible<std::string>::value << '\n'
+              << "Foo2 is nothrow destructible? "
+              << std::is_nothrow_destructible<Foo2>::value << '\n'
+              << "Bar is trivially destructible? "
+              << std::is_trivially_destructible<Bar>::value << '\n';
 }
