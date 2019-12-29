@@ -12,13 +12,13 @@ add_subdirectory(visitors)
 add_subdirectory(smartpointer)
 add_subdirectory(raii)
 add_subdirectory(containers)
+add_subdirectory(contracts)
 
 add_compile_options(-O1 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-virtual-dtor)
 
 
 add_executable(constructor_destructor
-        HowTo.cpp
-        )
+        HowTo.cpp)
 
 
 
