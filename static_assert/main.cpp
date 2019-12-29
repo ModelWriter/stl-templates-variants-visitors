@@ -1,12 +1,46 @@
 //  ----------------------------------------------------------------------------
-//  Header file for the main class.        main.cpp.hpp
+//  Header file for the main class.        main.cpp
 //  Created by Ferhat Erata <ferhat.erata@yale.edu> on December 28, 2019.
 //  Copyright (c) 2019 Yale University. All rights reserved.
+//
 // -----------------------------------------------------------------------------
 
-#ifndef VARIANTS_VISITORS_STL_MAIN_CPP_HPP
-#define VARIANTS_VISITORS_STL_MAIN_CPP_HPP
+#include <type_traits>
 
+template <class T> void swap(T& a, T& b) {
+    static_assert(std::is_copy_constructible<T>::value,
+                  "Swap requires copying");
+    static_assert(std::is_nothrow_copy_constructible<T>::value &&
+                      std::is_nothrow_copy_assignable<T>::value,
+                  "Swap requires nothrow copy/assign");
+    auto c = b;
+    b = a;
+    a = c;
+}
 
+template <class T> struct data_structure {
+    static_assert(std::is_default_constructible<T>::value,
+                  "Data Structure requires default-constructible elements");
+};
 
-#endif // VARIANTS_VISITORS_STL_MAIN_CPP_HPP
+struct no_copy {
+    no_copy(const no_copy&) = delete;
+    no_copy() = default;
+};
+
+struct no_default {
+    no_default() = delete;
+};
+
+int main() {
+
+    int a, b;
+    swap(a, b);
+
+    no_copy nc_a, nc_b;
+    swap(nc_a, nc_b); // 1
+
+    data_structure<int> ds_ok;
+    data_structure<no_default> ds_error; // 2
+
+}
