@@ -9,12 +9,13 @@ add_subdirectory(functors)
 add_subdirectory(stl)
 add_subdirectory(variants)
 add_subdirectory(visitors)
-add_subdirectory(smartpointer)
+add_subdirectory(smart_pointer)
 add_subdirectory(raii)
 add_subdirectory(containers)
 add_subdirectory(contracts)
+add_subdirectory(constexpression)
 
-add_compile_options(-O1 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-virtual-dtor)
+add_compile_options(-O2 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-virtual-dtor)
 
 
 add_executable(constructor_destructor
