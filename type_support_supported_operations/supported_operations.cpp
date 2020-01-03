@@ -207,18 +207,18 @@ int main() {
 
     // -------------------------------------------------------------------------
 
-    struct Foo2 {
+    struct Foo3 {
         std::string str;
-        ~Foo2() noexcept {};
+        ~Foo3() noexcept {};
     };
     struct Bar {
         ~Bar() = default;
     };
 
     std::cout << "\n" << utility::separator();
-    std::cout << "    struct Foo2 {\n"
+    std::cout << "    struct Foo3 {\n"
                  "        std::string str;\n"
-                 "        ~Foo2() noexcept {};\n"
+                 "        ~Foo3() noexcept {};\n"
                  "    };\n"
                  "    struct Bar {\n"
                  "        ~Bar() = default;\n"
@@ -228,8 +228,8 @@ int main() {
 
     std::cout << std::boolalpha << "std::string is destructible? "
               << std::is_destructible<std::string>::value << '\n'
-              << "Foo2 is nothrow destructible? "
-              << std::is_nothrow_destructible<Foo2>::value << '\n'
+              << "Foo3 is nothrow destructible? "
+              << std::is_nothrow_destructible<Foo3>::value << '\n'
               << "Bar is trivially destructible? "
               << std::is_trivially_destructible<Bar>::value << '\n';
 }
