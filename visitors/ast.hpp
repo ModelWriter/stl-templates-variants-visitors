@@ -28,7 +28,7 @@ class BinaryExpression : public Expression {
     BinaryExpression(std::unique_ptr<Expression> left,
                      std::unique_ptr<Expression> right)
         : lhs(std::move(left)), rhs(std::move(right)) {
-        assert(lhs && rhs);
+        assert(lhs and rhs);
     }
 
     [[nodiscard]] Expression& left() { return *lhs; }

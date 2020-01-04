@@ -102,3 +102,44 @@ add_executable(stl_heap
         stl.cpp
         stl.hpp
         stl_heap.cpp)
+
+add_executable(stl_is_sorted_until
+        ../utility.cpp
+        ../utility.hpp
+        stl.cpp
+        stl.hpp
+        stl_is_sorted_until.cpp)
+
+add_executable(stl_distance
+        ../utility.cpp
+        ../utility.hpp
+        stl.cpp
+        stl.hpp
+        stl_distance.cpp)
+
+################################
+
+add_executable(erase-remove-idiom
+        ../utility.cpp
+        ../utility.hpp
+        stl.cpp
+        stl.hpp
+        vector/erase-remove-idiom.cpp)
+
+
+add_executable(insert-sorted
+        ../utility.cpp
+        ../utility.hpp
+        stl.cpp
+        stl.hpp
+        vector/insert_sorted.cpp)
+
+add_executable(delete-quick
+        ../utility.cpp
+        ../utility.hpp
+        stl.cpp
+        stl.hpp
+        vector/delete-quick.cpp)
+
+
+################################

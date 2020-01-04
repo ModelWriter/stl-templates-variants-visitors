@@ -556,6 +556,98 @@ std::pair<ForwardIt, ForwardIt> minmax_element(ForwardIt first,
     return my::minmax_element(first, last, my::less<value_type>());
 }
 
+// -----------------------------------------------------------------------------
+// Examines the range [first, last) and finds the largest range beginning at
+// first in which the elements are sorted in ascending order.
+//
+// A sequence is sorted with respect to a comparator comp if for any iterator it
+// pointing to the sequence and any non-negative integer n such that it + n is a
+// valid iterator pointing to an element of the sequence, comp(*(it + n), *it)
+// evaluates to false.
+// 3) Elements are compared using the given binary comparison function comp.
+// https://en.cppreference.com/w/cpp/algorithm/is_sorted_until
+template <class ForwardIt, class Compare>
+ForwardIt is_sorted_until(ForwardIt first, ForwardIt last, Compare comp) {
+    if (first != last) {
+        ForwardIt next = first;
+        while (++next != last) {
+            if (comp(*next, *first))
+                return next;
+            first = next;
+        }
+    }
+    return last;
+}
+
+// -----------------------------------------------------------------------------
+// Examines the range [first, last) and finds the largest range beginning at
+// first in which the elements are sorted in ascending order.
+//
+// A sequence is sorted with respect to a comparator comp if for any iterator it
+// pointing to the sequence and any non-negative integer n such that it + n is a
+// valid iterator pointing to an element of the sequence, comp(*(it + n), *it)
+// evaluates to false.
+// 1) Elements are compared using operator<.
+// https://en.cppreference.com/w/cpp/algorithm/is_sorted_until
+
+struct less_iter {
+    template <typename Iterator1, typename Iterator2>
+    constexpr bool operator()(Iterator1 it1, Iterator2 it2) const {
+        return *it1 < *it2;
+    }
+};
+
+constexpr inline less_iter __iter_less_iter() { return less_iter(); }
+
+template <class ForwardIt>
+ForwardIt is_sorted_until(ForwardIt first, ForwardIt last) {
+    return my::is_sorted_until(first, last, my::__iter_less_iter());
+}
+
+// -----------------------------------------------------------------------------
+// Checks if the elements in range [first, last) are sorted in non-descending
+// order.
+//
+// A sequence is sorted with respect to a comparator comp if for any iterator it
+// pointing to the sequence and any non-negative integer n such that it + n is a
+// valid iterator pointing to an element of the sequence, comp(*(it + n), *it)
+// evaluates to false.
+// 1) Elements are compared using operator<.
+template <class ForwardIt> bool is_sorted(ForwardIt first, ForwardIt last) {
+    return my::is_sorted_until(first, last) == last;
+}
+
+// -----------------------------------------------------------------------------
+// Checks if the elements in range [first, last) are sorted in non-descending
+// order.
+//
+// A sequence is sorted with respect to a comparator comp if for any iterator it
+// pointing to the sequence and any non-negative integer n such that it + n is a
+// valid iterator pointing to an element of the sequence, comp(*(it + n), *it)
+// evaluates to false.
+// 3) Elements are compared using the given binary comparison function comp.
+template <class ForwardIt, class Compare>
+bool is_sorted(ForwardIt first, ForwardIt last, Compare comp) {
+    return my::is_sorted_until(first, last, comp) == last;
+}
+// -----------------------------------------------------------------------------
+// Calculates the number of elements between first and last.
+// If it is a random-access iterator, the function uses operator- to calculate
+// this. Otherwise, the function uses the increase operator (operator++)
+// repeatedly.
+// http://www.cplusplus.com/reference/iterator/distance/
+template <typename InputIterator>
+inline constexpr typename std::iterator_traits<InputIterator>::difference_type
+distance(InputIterator first, InputIterator last) {
+
+    typename std::iterator_traits<InputIterator>::difference_type n = 0;
+    while (first != last) {
+        ++first;
+        ++n;
+    }
+    return n;
+}
+
 } // namespace my
 
 #endif // STL_PLAYGROUND_HPP
