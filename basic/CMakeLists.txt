@@ -1,0 +1,3 @@
+add_subdirectory(BarGraph)
+add_subdirectory(BracketsWithMove)
+add_subdirectory(Evaluate)
