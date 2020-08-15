@@ -1,11 +1,8 @@
 cmake_minimum_required(VERSION 3.15)
-project(14_BarGraph)
+project(BarGraph)
 
-set(CMAKE_CXX_STANDARD 17)
 
-include_directories(.)
-
-add_executable(14_BarGraph
+add_executable(basic-bar-graph
         graph.cpp
         graph.hpp
         item.hpp
