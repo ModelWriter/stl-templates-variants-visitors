@@ -17,6 +17,7 @@ add_subdirectory(const_expression)
 add_subdirectory(static_assert)
 add_subdirectory(type_support_supported_operations)
 add_subdirectory(basic)
+add_subdirectory(computer-systems-book)
 
 add_compile_options(-O2 -g -Wall -Wextra -Wpedantic -Wnull-dereference -Wnon-virtual-dtor)
 
